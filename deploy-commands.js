@@ -1,14 +1,15 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
+const fs = require('fs');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 require('dotenv').config();
 
-const commands = [
-  new SlashCommandBuilder().setName('ping').setDescription('Replies with pong!'),
-  new SlashCommandBuilder().setName('deals').setDescription('Sync api and Replies with news infos or nothing if nothing new!'),
-  new SlashCommandBuilder().setName('help').setDescription('Replies with list of slash commands!'),
-]
-  .map((command) => command.toJSON());
+const commands = [];
+const commandFiles = fs.readdirSync('./commands').filter((file) => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+  const command = require(`./commands/${file}`);
+  commands.push(command.data.toJSON());
+}
 
 const rest = new REST({ version: '9' }).setToken(process.env.BOT_TOKEN);
 
