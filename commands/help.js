@@ -6,7 +6,7 @@ module.exports = {
     .setName('help')
     .setDescription('Replies help embed'),
   async execute(interaction) {
-    const exampleEmbed = new MessageEmbed()
+    const helpEmbed = new MessageEmbed()
       .setColor('#280137')
       .setTitle('Help embed')
       .setAuthor({ name: 'damoDeals', url: 'https://github.com/Damokless' })
@@ -17,6 +17,6 @@ module.exports = {
         { name: 'ping', value: 'Reply pong!' },
       )
       .setFooter({ text: 'Made by Damokles' });
-    await interaction.reply({ embeds: [exampleEmbed] });
+    await interaction.reply({ embeds: [helpEmbed] });
   },
 };
