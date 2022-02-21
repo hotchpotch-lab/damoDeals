@@ -15,6 +15,7 @@ module.exports = {
         { name: '\u200B', value: '\u200B' },
         { name: 'help', value: 'Displays the help embed' },
         { name: 'ping', value: 'Reply pong!' },
+        { name: 'sync', value: 'Reply pong!' },
       )
       .setFooter({ text: 'Made by Damokles' });
     await interaction.reply({ embeds: [helpEmbed] });
