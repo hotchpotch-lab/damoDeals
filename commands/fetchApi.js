@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const { MessageEmbed } = require('discord.js');
 
 const todayDate = new Date();
-let lastSyncDate = '2022-12-21 23:30:00';
+let lastSyncDate = '2022-01-01 23:30:00';
 let dealsCount = 0;
 
 
