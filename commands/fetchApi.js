@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const { MessageEmbed } = require('discord.js');
 
 const todayDate = new Date();
-let lastSyncDate = '2022-01-01 23:30:00';
+let lastSyncDate = '2022-04-08 23:30:00';
 let dealsCount = 0;
 
 
@@ -12,6 +12,12 @@ function sendData(data, interaction) {
   const givewayEmbed = new MessageEmbed()
     .setColor('#280137')
     .setTitle(data.title)
+    .seturl(data.open_giveaway)
+    .addFields(
+      { name: 'Type', value: data.type },
+      { name: 'Platforms', value: data.platforms, inline: true },
+      { name: 'Link', value: data.gamerpower_url, inline: true },
+    )
     .setAuthor({ name: 'damoDeals', url: 'https://github.com/Damokless' })
     .setDescription(data.description)
     .setImage(data.image)
