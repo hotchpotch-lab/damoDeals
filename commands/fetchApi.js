@@ -46,6 +46,5 @@ module.exports = {
       interaction.channel.send(`No deals for the moment last search ${lastSyncDate}`);
     }
     lastSyncDate = todayDate.toISOString().replace('T', ' ').slice(0, -5);
-    console.log(`last search date : ${lastSyncDate}`);
   },
 };
