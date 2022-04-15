@@ -14,9 +14,9 @@ function sendData(data, interaction) {
     .setTitle(data.title)
     .setURL(data.open_giveaway)
     .addFields(
-      { name: 'Type', value: data.type },
+      { name: 'Type', value: data.type, inline: true },
       { name: 'Platforms', value: data.platforms, inline: true },
-      { name: 'Link', value: data.gamerpower_url, inline: true },
+      { name: 'Link', value: data.gamerpower_url },
     )
     .setAuthor({ name: 'damoDeals', url: 'https://github.com/Damokless' })
     .setDescription(data.description)
