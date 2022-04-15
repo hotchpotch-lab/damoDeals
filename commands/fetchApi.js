@@ -12,7 +12,7 @@ function sendData(data, interaction) {
   const givewayEmbed = new MessageEmbed()
     .setColor('#280137')
     .setTitle(data.title)
-    .setUrl(data.open_giveaway)
+    .setURL(data.open_giveaway)
     .addFields(
       { name: 'Type', value: data.type },
       { name: 'Platforms', value: data.platforms, inline: true },
